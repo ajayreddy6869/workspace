@@ -1,0 +1,30 @@
+development:
+  traceLevel: debug
+  expiresInMinutes : 80
+  isbypassAllowed : true
+  bypassHeaderName : cn-services-internal
+  instance : 1c37b8ab-e1b1-11e4-b9a8-000c29836967
+  billing : 26fba97f-e1b1-11e4-b9a8-000c29836967
+  workload : 3253f23d-e1b1-11e4-b9a8-000c29836967
+  authentication : 6369bc72-e5ba-11e4-b9a8-000c29836967
+  resource : a491ccbd-ea0b-11e4-b6f6-000c298a79e5
+  authorization : 0baaa734-ea41-11e4-b6f6-000c298a79e5
+  chef : 46e2a94c-0535-11e5-82b7-000c294f703d
+  notification: e1c4e2fb-13a9-11e5-bab9-080027f1331a
+  feed: e8215a4f-13a9-11e5-bab9-080027f1331a
+  provider: 78a9475b-321a-11e5-87e0-000c292f8781
+production:
+   traceLevel: info
+   expiresInMinutes : 30
+   isbypassAllowed : true
+   bypassHeaderName : cn-services-internal
+   instance : 1c37b8ab-e1b1-11e4-b9a8-000c29836967
+   billing : 26fba97f-e1b1-11e4-b9a8-000c29836967
+   workload : 3253f23d-e1b1-11e4-b9a8-000c29836967
+   authentication : 6369bc72-e5ba-11e4-b9a8-000c29836967
+   resource : a491ccbd-ea0b-11e4-b6f6-000c298a79e5
+   authorization : 0baaa734-ea41-11e4-b6f6-000c298a79e5
+   chef : 46e2a94c-0535-11e5-82b7-000c294f703d
+   notification: e1c4e2fb-13a9-11e5-bab9-080027f1331a
+   feed: e8215a4f-13a9-11e5-bab9-080027f1331a
+   provider: 78a9475b-321a-11e5-87e0-000c292f8781

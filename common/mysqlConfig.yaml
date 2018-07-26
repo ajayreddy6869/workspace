@@ -1,0 +1,11 @@
+--- 
+development: 
+  host: localhost
+  password: Cn@xtApp@Q@
+  port: 3306
+  user: root
+production: 
+  host: localhost
+  password: Cn@xtApp@Q@
+  port: 3306
+  user: root

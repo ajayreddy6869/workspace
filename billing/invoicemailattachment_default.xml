@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmailTemplate>
+<content>
+<![CDATA[<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+body {margin: 0;padding: 0;color: #333; font-size:12px; font-family:Calibri, Helvetica, sans-serif;}
+ul, ol, dl,h1, h2, h3, h4, h5, h6, p {margin:0;padding:0;}a img {border: none;}
+p{ padding-bottom:10px; line-height:20px;}a:link {color: #42413C;text-decoration: underline;}
+a:visited {color: #6E6C64;text-decoration: underline;}a:hover, a:active, a:focus {text-decoration: none;}
+.container {width: 98%;margin: 0 auto; height: 100%;}header {border-color: #e7e7e7;border-bottom:none; min-height: 65px;  padding:1%; width:98%;}
+header a img{ width:230px; height:50px;}header span em{ width:100%; line-height:20px; float:left;font-style:normal; font-size:12px; color:#777;}
+.content {overflow:hidden;padding: 2%;width: 96%;} footer {height:90px; position: absolute; bottom: 0px; width: 90%; font-size:7pt}
+.cnt-md-5{width:50%;}.fl-lft{ float:left;}.fl-rgt{ float:right;}.txt-center{ text-align:center;}.txt-left{ text-align:left;}
+.txt-right{ text-align:right;}.mt10{ margin-top:10px;}.mt15{ margin-top:15px;}.mt25{ margin-top:25px;}.mt5{ margin-top:5px;}
+.mr10{ margin-right:10px;}.mr15{ margin-right:15px;}.mr5{ margin-right:5px;}.ml5{ margin-left:5px;}
+.ml10{ margin-left:10px;}.ml15{ margin-left:15px;}h4{padding-bottom:5px; font-size:12px;}
+h5{padding-bottom:5px; font-size:13px; border-top:1px solid #f0f0f0;padding: 10px 0 0; margin-top:10px;}
+.spl-col{ color:#777; text-transform: uppercase;}.wdt-full{ width:100%;}.wdt-md-7{ width:75%;}.wdt-md-2{ width:25%;}
+.invbox{width:100%; border:1px solid #f0f0f0; border-radius:5px;}
+.invbox h3{padding:10px; border-bottom:1px solid #f0f0f0;background-color: #8B8484; color:#FFF; border-radius: 5px 5px 0 0;}
+.invbox-cnt{padding:20px;}.wrapper{ width:100%;border: none; height:100%}
+.detail-grid{width:100%; float:left;}.detail-grid table{ border-collapse:collapse; border-spacing:0;width:100%; border: 0 solid #ddd;}
+.detail-grid table tr td{ padding:10px;color:#262626; text-shadow: 0px 1px 0px #fff; border-color:#ddd;background-color:##D8D8D8}
+.detail-grid table tr td span{ width:100%; float:left; margin-bottom:10px;}
+.detail-grid table tr:nth-child(odd){ background-color:#fff}
+.detail-grid table tr:nth-child(even){ background-color:#f9f9f9}
+@media (max-width:768px){.wdt-md-7{width:45%; margin-right:5%;}.wdt-md-2{ width:30%;} }
+
+@media print{
+	html, body {height: 100%;margin: 0;	padding:0;}	
+	body{padding:15mm 15mm 40mm 20mm}
+	.container{width:100%;margin:0;height:100%;position:relative}
+	.wrapper{position:relative;height:100%}
+	header{padding:0;width:100%;position:absolute;top:0;}
+	.content{width:100%;padding:0;padding-top:45mm}
+	.invbox-cnt{padding:0}
+	.footer{position:fixed;bottom:0;left:20mm;right:15mm}
+}
+</style>
+
+</head>
+<body>
+<div class="container">	
+	<div class="wrapper">
+	<header>
+		<div class="cnt-md-5 fl-rgt" > 
+		<a href="#" class="fl-rgt"><img src="abtis_logo.png" style="width:auto;height:2cm"></a>
+		</div>
+	</header>
+		<div class="content">
+		<div  class="wdt-md-2 fl-rgt">
+			<div class="invbox-cnt">
+			<h3>Rechnung<span class="ml5 fl-rgt">${orderNumber}</span></h3>
+			<h4>Datum <span class="ml5 fl-rgt">${invoiceDate}</span></h4>
+			<h4>Kundennummer <span class="ml5 fl-rgt">${referenceaccountid}</span></h4>
+			<h4>Bearbeiter <span class="ml5 fl-rgt">Buchhaltung</span></h4>
+			<h4>eMail<span class="ml5 fl-rgt">buchhaltung@abtis.de</span></h4>
+			<h4>Telefon<span class="ml5 fl-rgt">+49 7231 4431 100</span></h4>
+			<h4>Fax<span class="ml5 fl-rgt">+49 7231 4431 299</span></h4>
+			<h4>Support<span class="ml5 fl-rgt">+49 7231 4431 200</span></h4>
+			</div>
+		</div>
+		<div  class="wdt-md-2 fl-lft">
+			<div class="invbox-cnt">
+			<p>
+			<u> <font size = "1">abtis GmbH |Wilhelm-Becker-Straße 11b | 75179 Pforzheim <font></u> <br>
+			<font size = "3">
+			${billToAccountName}<br>
+			${billToUserName}<br>
+			${address1}<br>
+			${address2}
+			${city_zip}<br>
+			</font>
+			</p>
+			</div>
+		</div>
+		<div class="wdt-full fl-lft">
+			<section><h2>Ihre Bestellung: abtis Cloud-Marketplace</h2></section> </br>
+				<div>				
+				   <table border="0" cellpadding="5" cellspacing="0" width="100%" style="background-color:">
+				   <colgroup>
+					<col />
+					<col />
+					<col />
+					<col />
+					<col />
+					<col width="10%"/>
+					<col width="10%"/>
+					<col width="12%"/>
+				   </colgroup>
+				    <thead>
+					  <tr  style="font-size:10pt;background-color:#ccc">
+						<th align="left"> Position | Artikelbezeichnung | Beschreibung</th>
+						<th align="left" style="border-left:1px solid #bababa" >Start der Berechnung</th>
+						<th align="left" style="border-left:1px solid #bababa"> Ende der Berechnung</th>
+						<th align="left" style="border-left:1px solid #bababa">Art der Gebühr </th>
+						<th align="right" style="border-left:1px solid #bababa">Einzelpreis</th>
+						<th align="right" style="border-left:1px solid #bababa">Anteiliger Einzelpreis</th>
+						<th align="right" style="border-left:1px solid #bababa">Anzahl</th>
+						<th align="right" style="border-left:1px solid #bababa">Summe</th>
+					  </tr>
+				    </thead>  
+					<tbody style="font-size:10pt">
+					<tr></tr>
+					<tr></tr>
+					${rowdetails}
+					</tbody>
+					
+					<tr>
+						<td colspan="8">
+						<table border="0" cellpadding="0" cellspacing="0" width="100%" >
+					<tr colspan="4" height="80px"></tr>
+						<tr>
+						<td>
+							<table border= "0" cellpadding="3" cellspacing="0" width="100%">
+								<tr>
+									<td style="vertical-align:top"><b>Zahlungskonditionen:</b></td>
+									<td>
+									 Zahlbar bis zum ${paymentDueDate}. Es gelten unsere AGB sowie ein erweiterter Eigentumsvorbehalt. 
+									 ${sepaExtraInfo}
+									</td>
+								</tr>
+								<tr>
+								<td style="vertical-align:top"><b>Bankverbindung:</b></td>
+								<td>Sparkasse Pforzheim Calw BLZ: 66650085 Kto.: 8940916<br>
+									   IBAN: DE 5266 6500 8500 0894 0916 SWIFT-BIC: PZHSDE66XXX</td>
+								</tr>
+								<tr>
+								<td style="vertical-align:top"></td>
+								<td>${vatText1}<br><br>
+									   ${vatText2}</td>
+								</tr>
+							</table>
+						</td>						
+						<td></td>
+						<td></td>
+						<td>	
+							<table border= "0" style="font-size:10pt" align="right">
+								<tr>
+									<td>${PreviousMonthsOutStandingAmountLabel}</td>
+									<td></td>
+									<td style="text-align:right">${PreviousMonthsOutStandingAmount}</td>
+								</tr>
+								<tr>
+									<td>Netto:</td>
+									<td></td>
+									<td style="text-align:right">${amount}</td>
+								</tr>
+								<tr>
+									<td>MwSt</td>
+									<td style="text-align:right">${vatPercentage}%</td>
+									<td style="text-align:right">${vatAmount}</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><p><b>Brutto:</b></p></td>
+									<td></td>
+									<td><p><b>${chargeAmount}</b></p></td>
+								</tr>
+							</table>
+						<td/>	
+						</tr>
+					</table>
+					</td></tr>
+</table>					
+				</div>
+		</div>
+		</div>
+		<div class="footer">
+
+			<table width = "100%" cellpadding = "10px">
+			<tr>
+			<td style="width: 40%;">
+				Hausanschrift:<br>
+				abtis GmbH<br>
+				Wilhelm-Becker-Str. 11b<br>
+				75179 Pforzheim
+			</td>
+			<td style="width: 45%;">
+				www.abtis.de <br>
+				info@abtis.de <br>
+				Fon 07231-4431-0 <br>
+				Fax 07231-4431-191
+			</td>
+			<td style="text-align:middle">
+				   Geschäftsführer: <br>
+				   Thorsten Weimann <br>
+				   Amtsgericht Mannheim HRB 240854 <br>
+				   Umsatzsteuer-ID: DE229828094
+			</td>
+			</tr>
+			</table>	
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
+]]></content>
+</EmailTemplate>

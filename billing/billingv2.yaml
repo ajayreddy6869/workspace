@@ -1,0 +1,133 @@
+default:
+  port: 8120
+  mqVHost: /
+  mqExchangeName: ComputeNext
+  mqQueueName: billingv2
+  mqBindingKey: "apiv2.*"
+  defaultLanguage: "en_us"
+  defaultChannel: "AVNET"
+development:
+  database : "billingV2"
+  traceLevel: debug
+  billingFrequency: 1
+  billingFrequencyType : "of every month"
+  channelCode : AVNET
+  paymentRegistrationLimit : 3
+  MaskedCC : "411111******1111"
+  ExpirationMonth : 12
+  ExpirationYear : 2100
+  CreditCardType : "Zones"
+  PaymentProviderInfoId : "Zones"
+  maxCreditAmount: 10000
+  createSubscription: "created,started"
+  updatesubscriptionStatus: "deleted,deleting"
+  actionToStopCharging: "vm.delete"
+  getPrivateImageStorage: ""
+  reSizeStatus: "stopped"
+  ReturnUrl: "http://localhost"
+  ReturnUrlPrefix: "http://localhost"
+  ReturnUrlSuffix: "/Account/Confirmation"
+  PaymentOrderSoftDescriptorPrefix: "ComputeNext Inc Order Number"
+  paymentauthhost: localhost
+  paymentauthport: 8140
+  paymentauthpath: /apiv1.0/payment?format=json
+  apiv2host: apiv2.computenext.com
+  apiv2port: 8050
+  resourceServicePort: 5902
+  resourceServiceHost: resources.computenext.com
+  skipAuthorization: false
+  skipPaymentInfoVerfications: false
+  authServiceHost: localhost
+  authServicePort: 8000
+  authorizationServiceHost : localhost
+  authorizationServicePort: 8001
+  VPARule : no_vpa
+  isNotificationsBlocked: true
+  CCExpiryMailTemplate: "expiryCCAlertMailTemplate.xml"
+  InternalCCExpiryTemplate: "internalCCExpiryAlertTemplate.xml"
+  mailHost: "pod51009.outlook.com"
+  mailPort: 587
+  mailAuthUser: "support@computenext.com"
+  mailAuthPassword: "Vujo217212"
+  mailFrom: "support@computenext.com"
+  maillCC: "supporttesting@computenext.com"
+  mailTo: "billingint@computenext.com"
+  mailBillingTo: "billingint@computenext.com"
+  maillToGroup1: "billingint@computenext.com"
+  maillToGroup2: "billingint@computenext.com"
+  maillToGroup3: "billingint@computenext.com"
+  maillBcc: "paymentnotifications@computenext.com"
+  BusinessOperationNotificatioPath: "Business_Operation_Notifications.xml"
+  paymentTransactionSuccessTemplatePath: "paymentTransactionSuccessTemplatePath.xml"
+  paymentTransactionFailureCustomerTemplatePath: "paymentTransactionFailureCustomerTemplatePath.xml"
+  paymentTransactionErrorTemplatePath: "paymentTransactionErrorTemplatePath.xml"
+  customerInvoicePath: "C:\\deploy\\V2\\Services\\Node\\billingv2\\invoicetemplates_abtis\\"
+  htmlFileOpenPath: "file:///C:/deploy/V2/Services/Node/billingv2/invoicetemplates_abtis/"
+  supportedInvoiceFormats: "pdf,xls"
+  cniPaymentProviderInfoId: "07847D25-1682-4051-9DA7-777777777777"
+  localecode: "ja-JP"
+  decimalprecision: 0
+  commitmentTerm: "Month"
+  billingTerm: "Month"
+production:
+  traceLevel: info
+  database : "billingV2"  
+  billingFrequency: 01
+  billingFrequencyType : "of every month"
+  paymentRegistrationLimit : 3
+  MaskedCC : "411111******1111"
+  ExpirationMonth : 12
+  ExpirationYear : 2100
+  CreditCardType : "Zones"
+  PaymentProviderInfoId : "Zones"
+  maxCreditAmount: 25
+  createSubscription: "created,started"
+  updatesubscriptionStatus: "deleted,deleting"
+  actionToStopCharging: "vm.delete"
+  getPrivateImageStorage: ""
+  reSizeStatus: "stopped"
+  ReturnUrl: "http://localhost"
+  ReturnUrlPrefix: "http://localhost"
+  ReturnUrlSuffix: "/Account/Confirmation"
+  PaymentOrderSoftDescriptorPrefix: "ComputeNext Inc Order Number"
+  paymentauthhost: payment.computenext.com
+  paymentauthport: 8140
+  paymentauthpath: /apiv1.0/payment?format=json
+  apiv2host: apiv2.computenext.com
+  apiv2port: 8050
+  resourceServicePort: 5902
+  resourceServiceHost: resources.computenext.com
+  skipAuthorization: false
+  skipPaymentInfoVerfications: false
+  authServiceHost: localhost
+  authServicePort: 8000
+  authorizationServiceHost : localhost
+  authorizationServicePort: 8001
+  VPARule : mp_vpa_show
+  isNotificationsBlocked: false 
+  CCExpiryMailTemplate: "expiryCCAlertMailTemplate.xml"
+  InternalCCExpiryTemplate: "internalCCExpiryAlertTemplate.xml"
+  mailHost: "pod51009.outlook.com"
+  mailPort: 587
+  mailAuthUser: "support@computenext.com"
+  mailAuthPassword: "Vujo217212"
+  mailFrom: "support@computenext.com"
+  maillCC: "supporttesting@computenext.com"
+  mailTo: "billingint@computenext.com"
+  mailBillingTo: "billingint@computenext.com"
+  maillToGroup1: "billingint@computenext.com"
+  maillToGroup2: "billingint@computenext.com"
+  maillToGroup3: "billingint@computenext.com"
+  maillBcc: "paymentnotifications@computenext.com"
+  BusinessOperationNotificatioPath: "Business_Operation_Notifications.xml"
+  paymentTransactionSuccessTemplatePath: "paymentTransactionSuccessTemplatePath.xml"
+  paymentTransactionFailureCustomerTemplatePath: "paymentTransactionFailureCustomerTemplatePath.xml"
+  paymentTransactionErrorTemplatePath: "paymentTransactionErrorTemplatePath.xml"
+  customerInvoicePath: "C:\\deploy\\V2\\Services\\Node\\billingv2\\invoicetemplates_abtis\\"
+  htmlFileOpenPath: "file:///C:/deploy/V2/Services/Node/billingv2/invoicetemplates_abtis/"
+  supportedInvoiceFormats: "pdf,xls"
+  cniPaymentProviderInfoId: "07847D25-1682-4051-9DA7-777777777777"
+  localecode: "ja-JP"
+  decimalprecision: 0
+  commitmentTerm: "Month"
+  billingTerm: "Month"
