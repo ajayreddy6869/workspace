@@ -1,0 +1,82 @@
+#loader
+  img.loading-image(src='./img/loader.png', alt='loading..')
+section.content-header
+  h1
+    | Change Management
+    small
+section.content
+  .box
+    .box-header
+      div.notification.bg-success#alerts
+        a.pull-right#notifi-close-btn(href='#') ×
+        a#alert-message
+    .box-body
+      table#changemanagement.table.table-bordered.table-striped
+        thead
+          tr
+            th Date
+            th User
+            th Source IP
+            th Destination IP
+            th Port
+            th Protocol
+            th Application Name
+            th Action
+            th Status            
+            
+        tbody
+          for key in changeMgmtDtls
+            tr
+              td #{moment(key.created).format('DD/MM/YYYY h:mm:ss a')}
+              td #{key.createdBy}
+              td #{key.from}
+              td #{key.to}
+              td #{(key.fromPort == key.toPort) ? key.toPort : key.fromPort + '-'+ key.toPort} 
+              td #{key.protocol} 
+              td #{key.applicationName}
+              - if(key.action == 'add'){
+              -  var action = 'Add connection'
+              - }else if(key.action == 'delete'){
+              -  var action = 'Delete connection'
+              - }
+              td #{action || key.action}
+              - var status = (key.status) ? (key.status.trim()).toLowerCase() :'';
+              - var action = (key.action) ? (key.action.trim()).toLowerCase() :'';
+              td 
+                if(isAdmin && isAdmin=='yes')
+                  include auditviewAction
+                else
+                  if(status=='audit pending')
+                    .btn-group
+                      button.btn.btn-warning.btn-sm.noactionbutton Audit Pending
+                  else if(status=='approved')      
+                    .btn-group
+                      button.btn.bg-success.btn-sm.noactionbutton Approved
+                  else if(status=='reverted')   
+                    .btn-group
+                      button.btn.btn-danger.btn-sm.noactionbutton Reverted
+                  else
+                    .btn-group
+                      button.btn.btn-info.btn-sm.noactionbutton #{status}
+             
+                
+style.
+  .cmbutton{
+    width: 110px;
+    cursor:default;
+  }  
+  .noactionbutton{
+    width: 135px;
+    cursor:default;
+  }  
+
+script.
+  $('#changemanagement').DataTable({
+     "order": [[ 0, "desc" ]]
+  });
+  $('#notifi-close-btn').on('click', function () {
+    $('.notification').hide();
+  })
+
+  
+  

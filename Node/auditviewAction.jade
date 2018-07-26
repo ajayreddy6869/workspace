@@ -1,0 +1,35 @@
+if(status=='audit pending')
+  .btn-group
+    button.btn.btn-warning.btn-sm.cmbutton Audit Pending
+    button.btn.btn-warning.btn-sm.dropdown-toggle(data-toggle="dropdown")
+      span.caret
+    ul.dropdown-menu(role="menu")
+      li
+        a(onclick='onApproveChMgmt(#{JSON.stringify(key)})' style='cursor:pointer;') Approve
+      if(action == 'add')
+        li
+          a(onclick='onRevertAddConnection(#{JSON.stringify(key)})' style='cursor:pointer;') Revert
+      else if(action == 'delete')
+        li
+          a(onclick='onRevertDeleteConnection(#{JSON.stringify(key)})' style='cursor:pointer;') Revert
+else if(status=='approved')      
+  .btn-group
+    button.btn.bg-success.btn-sm.cmbutton Approved
+    button.btn.bg-success.btn-sm.dropdown-toggle(data-toggle="dropdown")
+      span.caret
+    ul.dropdown-menu(role="menu")                     
+      if(action == 'add')
+        li
+          a(onclick='onRevertAddConnection(#{JSON.stringify(key)})' style='cursor:pointer;') Revert
+      else if(action == 'delete')
+        li
+          a(onclick='onRevertDeleteConnection(#{JSON.stringify(key)})' style='cursor:pointer;') Revert
+else if(status=='reverted')   
+  .btn-group
+    button.btn.btn-danger.btn-sm(style="width:135px;cursor:default;") Reverted
+else
+  .btn-group
+    button.btn.btn-info.btn-sm.cmbutton(style="width:135px;cursor:default;") #{status}
+
+  
+  
